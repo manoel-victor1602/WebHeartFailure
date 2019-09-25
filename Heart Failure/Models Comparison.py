@@ -13,7 +13,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report, accuracy_score, confusion_matrix
 from sklearn.model_selection import train_test_split
 
-from sklearn.externals import joblib
+import joblib
 
 
 def train_test_clf(clf, X, y):
