@@ -24,9 +24,9 @@ def train_test_clf(clf, X, y):
 
     y_pred = clf.predict(X_test)
 
-    print(accuracy_score(real, predicts))
-    print(confusion_matrix(real, predicts))
-    print(classification_report(real, predicts))
+    print(accuracy_score(y_test, y_pred))
+    print(confusion_matrix(y_test, y_pred))
+    print(classification_report(y_test, y_pred))
 
 
 df = pd.read_csv('patientdataV6.csv')
