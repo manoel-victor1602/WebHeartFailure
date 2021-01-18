@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request
-from sklearn.externals import joblib
+import joblib
 import numpy as np
+
+encoder_path = 'encoders/'
 
 app = Flask(__name__)
 
@@ -18,10 +20,10 @@ def result():
 		return render_template("result.html", result = result, prediction = prediction)
 
 def classify(result):
-	hf_encoder = joblib.load('hf_encoder.pkl')
-	family_encoder = joblib.load('family_encoder.pkl')
-	sex_encoder = joblib.load('sex_encoder.pkl')
-	smoker_encoder = joblib.load('smoker_encoder.pkl')
+	hf_encoder = joblib.load(encoder_path + 'hf_encoder.pkl')
+	family_encoder = joblib.load(encoder_path + 'family_encoder.pkl')
+	sex_encoder = joblib.load(encoder_path + 'sex_encoder.pkl')
+	smoker_encoder = joblib.load(encoder_path + 'smoker_encoder.pkl')
 
 	clf = joblib.load('rf.pkl')
 
